@@ -12,14 +12,23 @@ def main():
         choice = input("Enter your choice: ")
 
         if choice == '1':
-            # Prompt for and add an item
-            pass
+            item = input("Enter the item to add: ")
+            shopping_list.append(item)
+            print(f"{item} has been added to the list.")
         elif choice == '2':
-            # Prompt for and remove an item
-            pass
+            item = input("Enter the item to remove: ")
+            if item in shopping_list:
+                shopping_list.remove(item)
+                print(f"{item} has been removed from the list.")
+            else:
+                print(f"{item} was not found in the list.")
         elif choice == '3':
-            # Display the shopping list
-            pass
+            if shopping_list:
+                print("Shopping List:")
+                for item in shopping_list:
+                    print(f"- {item}")
+            else:
+                print("Your shopping list is empty.")
         elif choice == '4':
             print("Goodbye!")
             break
@@ -28,5 +37,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
 
 
